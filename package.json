@@ -1,0 +1,12 @@
+{
+  "name": "ui-hokie-matcha",
+  "displayName": "Hokie Matcha",
+  "title": "Hokie Matcha",
+  "theme": "ui",
+  "version": "1.0.0",
+  "description": "Matcha-style layout in Chicago Maroon, Burnt Orange and Hokie Stone gray.",
+  "license": "MIT",
+  "engines": {
+    "mailspring": "*"
+  }
+}

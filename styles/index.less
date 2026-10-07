@@ -1,0 +1,111 @@
+@import "ui-variables";
+
+// Selectors below target Mailspring's DOM. If one doesn't take effect,
+// inspect the element with Developer > Toggle Developer Tools and adjust.
+
+// Header bar height. Change this one value to adjust.
+@hm-toolbar-height: 50px;
+.sheet-toolbar,
+.sheet-toolbar-container,
+.sheet-toolbar .item-container,
+.toolbar-window-controls {
+  height: @hm-toolbar-height !important;
+  min-height: @hm-toolbar-height !important;
+  align-items: center !important;
+}
+.sheet-toolbar-container > div,
+.sheet-toolbar [class*="toolbar-"] {
+  align-items: center !important;
+}
+
+// Header bar: light icons and text on charcoal.
+// Mailspring's base toolbar rules are more specific than a theme's,
+// so these use !important.
+.sheet-toolbar,
+.sheet-toolbar-container,
+.sheet-toolbar .item-container,
+.sheet-toolbar [class*="toolbar-"],
+.toolbar-window-controls {
+  background-color: @hm-charcoal !important;
+  background-image: none !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: none !important;
+  color: #F2F1EF !important;
+}
+.sheet-toolbar .btn,
+.sheet-toolbar .btn-toolbar,
+.sheet-toolbar .btn-group .btn {
+  background: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #F2F1EF !important;
+  &:hover { background: rgba(255, 255, 255, 0.12) !important; }
+}
+.sheet-toolbar img.content-mask {
+  background-color: #F2F1EF !important;
+}
+
+// Search field in the header
+.sheet-toolbar input,
+.sheet-toolbar [class*="search"] {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  color: #F2F1EF !important;
+  box-shadow: none !important;
+}
+.sheet-toolbar input::placeholder { color: #A3A5A8 !important; }
+.sheet-toolbar [class*="search"] img.content-mask { background-color: #A3A5A8 !important; }
+
+// Compose button in Burnt Orange
+.sheet-toolbar .btn.item-compose,
+.sheet-toolbar .btn-toolbar.item-compose {
+  background: @hm-orange !important;
+  img.content-mask { background-color: @hm-orange-ink !important; }
+  &:hover { background: lighten(@hm-orange, 6%) !important; }
+}
+
+// Account sidebar: white text on maroon
+.account-sidebar {
+  background: @hm-maroon;
+  color: #FFFFFF;
+  .heading,
+  .outline-view-heading .text { color: #E8C9D3; }
+  .item .name { color: #FFFFFF; }
+  .item img.content-mask { background-color: #E8C9D3; }
+  .item:hover { background: rgba(255, 255, 255, 0.1); }
+  .item.selected {
+    background: rgba(0, 0, 0, 0.32) !important;
+    .name { color: #FFE6D2 !important; font-weight: 600; }
+    img.content-mask { background-color: #FFE6D2 !important; }
+  }
+  .item-count-box,
+  .item-count-box.alt-count,
+  .item.selected .item-count-box {
+    background: @hm-orange !important;
+    background-image: none !important;
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+}
+
+// Thread list
+.thread-list .list-item.unread:not(.focused):not(.selected) {
+  background: @list-bg;
+}
+.thread-list .thread-icon.thread-icon-unread,
+.draft-list .thread-icon.thread-icon-unread {
+  background: radial-gradient(circle at center, @hm-orange 0 5px, transparent 5.5px) !important;
+}
+
+// Message view
+.message-item-wrap .message-item-white-wrap {
+  border-radius: 8px;
+  border: 1px solid @hm-line;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+.mail-label {
+  border-radius: 4px;
+}
